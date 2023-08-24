@@ -8,6 +8,14 @@ using UnityEditor.Experimental.GraphView;
 using UnityEditor.ShortcutManagement;
 
 /*
+	Forked by: Fingar (https://twitter.com/FingarB)
+
+	Disabled hotkey rebinding, and changed all hotkeys to follow the pattern A for Add, M for Multiply, U for UV, etc.
+	Some hotkeys require the have the Shift or Ctrl+Shift modifiers to make sure they don't collide with default Unity hotkeys.	
+*/
+
+
+/*
 Author : Cyanilux (https://twitter.com/Cyanilux)
 Github Repo : https://github.com/Cyanilux/ShaderGraphVariables
 
@@ -49,7 +57,7 @@ namespace Cyan {
 	public class ExtraFeatures {
 
 		#region Extra Features (Swap Command)
-		[MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Swap Ports On Selected Nodes _s")]
+		[MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Swap Ports On Selected Nodes #s")]
 		private static void SwapPortsCommand() {
 			if (!sgHasFocus || graphView == null) return;
 			if (debugMessages) Debug.Log("Swap Ports");
@@ -113,6 +121,7 @@ namespace Cyan {
 				this.subgraphGUID = subgraphGUID;
 			}
 		}
+        
 		private static AddNodeType[] addNodeTypes = new AddNodeType[10];
 		private static readonly string[] addNodeDefaults = new string[]{
 			"Add",
@@ -128,6 +137,7 @@ namespace Cyan {
 		};
 
 		#region Extra Features (Rebind)
+        /*
 		private class RebindWindow : EditorWindow {
 
 			private string shortcutID = "Main Menu/Tools/SGVariables/ExtraFeatures/Commands/Add Node ";
@@ -175,14 +185,140 @@ namespace Cyan {
 				addNodeTypes = new AddNodeType[10];
 			}
 		}
+        */
 
+        /*
 		[MenuItem("Tools/SGVariables/ExtraFeatures/Remap Node Bindings", false, 0)]
 		private static void RebindNodes() {
 			RebindWindow window = (RebindWindow)EditorWindow.GetWindow(typeof(RebindWindow));
 			window.Show();
 		}
+        */
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add int-node _0", false, 0)]
+        private static void AddNodeCommandInt() { AddNodeCommand("Integer"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add float-node _1", false, 0)]
+        private static void AddNodeCommandFloat() { AddNodeCommand("Vector1"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Vector2-node _2", false, 0)]
+        private static void AddNodeCommandVector2() { AddNodeCommand("Vector2"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Vector3-node _3", false, 0)]
+        private static void AddNodeCommandVector3() { AddNodeCommand("Vector3"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Vector4-node _4", false, 0)]
+        private static void AddNodeCommandVector4() { AddNodeCommand("Vector4"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Color-node _5", false, 0)]
+        private static void AddNodeCommandColor() { AddNodeCommand("Color"); }
+
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Add-node _A", false, 100)]
+        private static void AddNodeCommandAdd() { AddNodeCommand("Add"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Subtract-node _S", false, 100)]
+        private static void AddNodeCommandSubtract() { AddNodeCommand("Subtract"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Multiply-node _M", false, 100)]
+        private static void AddNodeCommandMultiply() { AddNodeCommand("Multiply"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Divide-node _D", false, 100)]
+        private static void AddNodeCommandDivide() { AddNodeCommand("Divide"); }
+
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Lerp-node _L", false, 200)]
+        private static void AddNodeCommandLerp() { AddNodeCommand("Lerp"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Normalize-node _N", false, 200)]
+        private static void AddNodeCommandNormalize() { AddNodeCommand("Normalize"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add OneMinus-node _O", false, 200)]
+        private static void AddNodeCommandOneMinus() { AddNodeCommand("OneMinus"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Power-node #E", false, 200)] // Shift+E
+        private static void AddNodeCommandPower() { AddNodeCommand("Power"); }
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add SquareRoot-node #Q", false, 200)]   // Shift+Q
+        private static void AddNodeCommandSquareRoot() { AddNodeCommand("SquareRoot"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Modulo-node #M", false, 100)]   // Shift+M
+        private static void AddNodeCommandModulo() { AddNodeCommand("Modulo"); }
+
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Split-node _V", false, 300)]
+        private static void AddNodeCommandSplit() { AddNodeCommand("Split"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Combine-node _C", false, 300)]
+        private static void AddNodeCommandCombine() { AddNodeCommand("Combine"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Swizzle-node #X", false, 300)] // Shift+X
+        private static void AddNodeCommandSwizzle() { AddNodeCommand("Swizzle"); }
+
+        
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add UV-node _U", false, 400)]
+        private static void AddNodeCommandUV() { AddNodeCommand("UV"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add SampleTexture2D-node #T", false, 400)]   // Shift+T
+        private static void AddNodeCommandSampleTexture2D() { AddNodeCommand("SampleTexture2D"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Time-node %#T", false, 400)]
+        private static void AddNodeCommandTime() { AddNodeCommand("Time"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add TilingAndOffset-node #W", false, 400)]   // Shift+W
+        private static void AddNodeCommandTilingAndOffset() { AddNodeCommand("TilingAndOffset"); }
+
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add RegisterVariable-node #R", false, 500)] // Shift+R
+        private static void AddNodeCommandRegisterVariable() { AddNodeCommand("RegisterVariable"); }
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add GetVariable-node #G", false, 500)] // Shift+G
+        private static void AddNodeCommandGetVariable() { AddNodeCommand("GetVariable"); }
+
+
+        [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Preview-node #P", false, 600)] // Shift+E
+        private static void AddNodeCommandPreview() { AddNodeCommand("Preview"); }
+
+
+        private static void AddNodeCommand(string nodeName)
+        {
+            if (!sgHasFocus || graphView == null) return;
+
+            string node = nodeName;
+            if (string.IsNullOrEmpty(node))
+            {
+                return;
+            }
+            string subgraphGUID = null;
+            if (node.Contains("SubGraph"))
+            {
+                int start = node.IndexOf('(');
+                int end = node.LastIndexOf(')');
+                int length = end - start - 1;
+                subgraphGUID = node.Substring(start + 1, length);
+                node = "SubGraph";
+            }
+            else if (node == "RegisterVariable")
+            {
+                subgraphGUID = "d455b29bada2b284ca73133c44fbc1ce";
+                node = "SubGraph";
+            }
+            else if (node == "GetVariable")
+            {
+                subgraphGUID = "5951f0cfb2fb4134ea014f63adeff8d9";
+                node = "SubGraph";
+            }
+            string typeString = "UnityEditor.ShaderGraph." + node + "Node";
+            var type = new AddNodeType(sgAssembly.GetType(typeString), subgraphGUID);
+            Vector2 mousePos = Event.current?.mousePosition ?? Vector2.zero;
+            mousePos.y -= 35;
+            Matrix4x4 matrix = graphView.viewTransform.matrix.inverse;
+            Rect r = new Rect();
+            r.position = matrix.MultiplyPoint(mousePos);
+            AddNode(type, r);
+        }
+
         #endregion
-		
+        /*
         [MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Node 1 _1")]
 		private static void AddNodeCommand1() { AddNodeCommand(1); }
 
@@ -213,7 +349,7 @@ namespace Cyan {
 		[MenuItem("Tools/SGVariables/ExtraFeatures/Commands/Add Node 10 _0")]
 		private static void AddNodeCommand10() { AddNodeCommand(10); }
 
-		private static void AddNodeCommand(int i) {
+        private static void AddNodeCommand(int i) {
 			if (!sgHasFocus || graphView == null) return;
 			AddNodeType type = addNodeTypes[i - 1];
 			if (type == null) {
@@ -250,8 +386,9 @@ namespace Cyan {
 			r.position = matrix.MultiplyPoint(mousePos);
 			AddNode(type, r);
 		}
+        */
 
-		private static PropertyInfo drawStateProperty;
+        private static PropertyInfo drawStateProperty;
 		private static PropertyInfo positionProperty;
 		private static PropertyInfo expandedProperty;
 		private static PropertyInfo subGraphAssetProperty;
