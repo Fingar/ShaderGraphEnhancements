@@ -9,7 +9,7 @@ Some of the Amplify Hotkeys crashes with the default hotkeys of unity, like Q,W,
 For these hotkeys I have added 'Shift' modifier or 'Ctrl+Shift'. Its not optimal, but should help out a lot.
 
 For full list of the Add Node-hotkeys, check: 
-**Tools → SGVariables → ExtraFeatures → Commands**
+**Tools → Shader Graph Enhancements**
 
 
 # Original documentation from Shader Graph Variables
