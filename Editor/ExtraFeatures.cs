@@ -140,7 +140,7 @@ namespace Cyan {
         /*
 		private class RebindWindow : EditorWindow {
 
-			private string shortcutID = "Main Menu/Tools/Add Node ";
+			private string shortcutID = "Main Menu/Tools/ShaderGraphEnhancements/Add Node ";
 			private string[] shortcuts;
 			private string[] values;
 
@@ -188,94 +188,94 @@ namespace Cyan {
         */
 
         /*
-		[MenuItem("Tools/SGVariables/ExtraFeatures/Remap Node Bindings", false, 0)]
+		[MenuItem("Tools/ShaderGraphEnhancements/SGVariables/ExtraFeatures/Remap Node Bindings", false, 0)]
 		private static void RebindNodes() {
 			RebindWindow window = (RebindWindow)EditorWindow.GetWindow(typeof(RebindWindow));
 			window.Show();
 		}
         */
 
-        [MenuItem("Tools/Add int-node _0", false, 0)]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add int-node _0", false, 0)]
         private static void AddNodeCommandInt() { AddNodeCommand("Integer"); }
 
-        [MenuItem("Tools/Add float-node _1", false, 0)]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add float-node _1", false, 0)]
         private static void AddNodeCommandFloat() { AddNodeCommand("Vector1"); }
 
-        [MenuItem("Tools/Add Vector2-node _2", false, 0)]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Vector2-node _2", false, 0)]
         private static void AddNodeCommandVector2() { AddNodeCommand("Vector2"); }
 
-        [MenuItem("Tools/Add Vector3-node _3", false, 0)]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Vector3-node _3", false, 0)]
         private static void AddNodeCommandVector3() { AddNodeCommand("Vector3"); }
 
-        [MenuItem("Tools/Add Vector4-node _4", false, 0)]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Vector4-node _4", false, 0)]
         private static void AddNodeCommandVector4() { AddNodeCommand("Vector4"); }
 
-        [MenuItem("Tools/Add Color-node _5", false, 0)]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Color-node _5", false, 0)]
         private static void AddNodeCommandColor() { AddNodeCommand("Color"); }
 
 
-        [MenuItem("Tools/Add Add-node _A", false, 100)]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Add-node _A", false, 100)]
         private static void AddNodeCommandAdd() { AddNodeCommand("Add"); }
 
-        [MenuItem("Tools/Add Subtract-node _S", false, 100)]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Subtract-node _S", false, 100)]
         private static void AddNodeCommandSubtract() { AddNodeCommand("Subtract"); }
 
-        [MenuItem("Tools/Add Multiply-node _M", false, 100)]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Multiply-node _M", false, 100)]
         private static void AddNodeCommandMultiply() { AddNodeCommand("Multiply"); }
 
-        [MenuItem("Tools/Add Divide-node _D", false, 100)]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Divide-node _D", false, 100)]
         private static void AddNodeCommandDivide() { AddNodeCommand("Divide"); }
 
 
-        [MenuItem("Tools/Add Lerp-node _L", false, 200)]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Lerp-node _L", false, 200)]
         private static void AddNodeCommandLerp() { AddNodeCommand("Lerp"); }
 
-        [MenuItem("Tools/Add Normalize-node _N", false, 200)]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Normalize-node _N", false, 200)]
         private static void AddNodeCommandNormalize() { AddNodeCommand("Normalize"); }
 
-        [MenuItem("Tools/Add OneMinus-node _O", false, 200)]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add OneMinus-node _O", false, 200)]
         private static void AddNodeCommandOneMinus() { AddNodeCommand("OneMinus"); }
 
-        [MenuItem("Tools/Add Power-node #E", false, 200)] // Shift+E
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Power-node #E", false, 200)] // Shift+E
         private static void AddNodeCommandPower() { AddNodeCommand("Power"); }
-        [MenuItem("Tools/Add SquareRoot-node #Q", false, 200)]   // Shift+Q
+        [MenuItem("Tools/ShaderGraphEnhancements/Add SquareRoot-node #Q", false, 200)]   // Shift+Q
         private static void AddNodeCommandSquareRoot() { AddNodeCommand("SquareRoot"); }
 
-        [MenuItem("Tools/Add Modulo-node #M", false, 100)]   // Shift+M
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Modulo-node #M", false, 100)]   // Shift+M
         private static void AddNodeCommandModulo() { AddNodeCommand("Modulo"); }
 
 
-        [MenuItem("Tools/Add Split-node _V", false, 300)]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Split-node _V", false, 300)]
         private static void AddNodeCommandSplit() { AddNodeCommand("Split"); }
 
-        [MenuItem("Tools/Add Combine-node _C", false, 300)]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Combine-node _C", false, 300)]
         private static void AddNodeCommandCombine() { AddNodeCommand("Combine"); }
 
-        [MenuItem("Tools/Add Swizzle-node #X", false, 300)] // Shift+X
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Swizzle-node #X", false, 300)] // Shift+X
         private static void AddNodeCommandSwizzle() { AddNodeCommand("Swizzle"); }
 
         
-        [MenuItem("Tools/Add UV-node _U", false, 400)]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add UV-node _U", false, 400)]
         private static void AddNodeCommandUV() { AddNodeCommand("UV"); }
 
-        [MenuItem("Tools/Add SampleTexture2D-node #T", false, 400)]   // Shift+T
+        [MenuItem("Tools/ShaderGraphEnhancements/Add SampleTexture2D-node #T", false, 400)]   // Shift+T
         private static void AddNodeCommandSampleTexture2D() { AddNodeCommand("SampleTexture2D"); }
 
-        [MenuItem("Tools/Add Time-node %#T", false, 400)]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Time-node %#T", false, 400)]
         private static void AddNodeCommandTime() { AddNodeCommand("Time"); }
 
-        [MenuItem("Tools/Add TilingAndOffset-node #W", false, 400)]   // Shift+W
+        [MenuItem("Tools/ShaderGraphEnhancements/Add TilingAndOffset-node #W", false, 400)]   // Shift+W
         private static void AddNodeCommandTilingAndOffset() { AddNodeCommand("TilingAndOffset"); }
 
 
-        [MenuItem("Tools/Add RegisterVariable-node #R", false, 500)] // Shift+R
+        [MenuItem("Tools/ShaderGraphEnhancements/Add RegisterVariable-node #R", false, 500)] // Shift+R
         private static void AddNodeCommandRegisterVariable() { AddNodeCommand("RegisterVariable"); }
 
-        [MenuItem("Tools/Add GetVariable-node #G", false, 500)] // Shift+G
+        [MenuItem("Tools/ShaderGraphEnhancements/Add GetVariable-node #G", false, 500)] // Shift+G
         private static void AddNodeCommandGetVariable() { AddNodeCommand("GetVariable"); }
 
 
-        [MenuItem("Tools/Add Preview-node #P", false, 600)] // Shift+E
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Preview-node #P", false, 600)] // Shift+E
         private static void AddNodeCommandPreview() { AddNodeCommand("Preview"); }
 
 
@@ -319,34 +319,34 @@ namespace Cyan {
 
         #endregion
         /*
-        [MenuItem("Tools/Add Node 1 _1")]
+        [MenuItem("Tools/ShaderGraphEnhancements/Add Node 1 _1")]
 		private static void AddNodeCommand1() { AddNodeCommand(1); }
 
-		[MenuItem("Tools/Add Node 2 _2")]
+		[MenuItem("Tools/ShaderGraphEnhancements/Add Node 2 _2")]
 		private static void AddNodeCommand2() { AddNodeCommand(2); }
 
-		[MenuItem("Tools/Add Node 3 _3")]
+		[MenuItem("Tools/ShaderGraphEnhancements/Add Node 3 _3")]
 		private static void AddNodeCommand3() { AddNodeCommand(3); }
 
-		[MenuItem("Tools/Add Node 4 _4")]
+		[MenuItem("Tools/ShaderGraphEnhancements/Add Node 4 _4")]
 		private static void AddNodeCommand4() { AddNodeCommand(4); }
 
-		[MenuItem("Tools/Add Node 5 _5")]
+		[MenuItem("Tools/ShaderGraphEnhancements/Add Node 5 _5")]
 		private static void AddNodeCommand5() { AddNodeCommand(5); }
 
-		[MenuItem("Tools/Add Node 6 _6")]
+		[MenuItem("Tools/ShaderGraphEnhancements/Add Node 6 _6")]
 		private static void AddNodeCommand6() { AddNodeCommand(6); }
 
-		[MenuItem("Tools/Add Node 7 _7")]
+		[MenuItem("Tools/ShaderGraphEnhancements/Add Node 7 _7")]
 		private static void AddNodeCommand7() { AddNodeCommand(7); }
 
-		[MenuItem("Tools/Add Node 8 _8")]
+		[MenuItem("Tools/ShaderGraphEnhancements/Add Node 8 _8")]
 		private static void AddNodeCommand8() { AddNodeCommand(8); }
 
-		[MenuItem("Tools/Add Node 9 _9")]
+		[MenuItem("Tools/ShaderGraphEnhancements/Add Node 9 _9")]
 		private static void AddNodeCommand9() { AddNodeCommand(9); }
 
-		[MenuItem("Tools/Add Node 10 _0")]
+		[MenuItem("Tools/ShaderGraphEnhancements/Add Node 10 _0")]
 		private static void AddNodeCommand10() { AddNodeCommand(10); }
 
         private static void AddNodeCommand(int i) {
