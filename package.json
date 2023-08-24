@@ -1,6 +1,6 @@
 {
 	"name": "com.fingar.shadergraph-enhancements",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"displayName": "Shader Graph Enhancements",
 	"description": "Enhanced features for Unity's built-in Shader Graph, including register/get variables and updated hotkeys ('A' for Add, 'M' for Multiply, etc.) for a faster and cleaner workflow. \n\nForked from ShaderGraphVariables by Cyanilux.",
 	"keywords": [
