@@ -1,4 +1,18 @@
-# Shader Graph Variables
+# New documentation for this fork
+
+Thanks to Cyanilux for making Unity Shader Graph more usable.
+
+This fork changes the hotkeys functionality to mimic what we have in Amplify Shader Graph, which not only makes it a lot faster to a throw together a shader graph quickly, but also makes it easier to remember the hotkeys ('M' as in Multiply, 'A' as in Add, etc.).
+This means that the whole Rebind hotkeys functionaly that Cyanilux made has been disabled for now.
+
+Some of the Amplify Hotkeys crashes with the default hotkeys of unity, like Q,W,E,R,T to change between tools for the scene view, or similar stuff.
+For these hotkeys I have added 'Shift' modifier or 'Ctrl+Shift'. Its not optimal, but should help out a lot.
+
+For full list of the Add Node-hotkeys, check: 
+**Tools → SGVariables → ExtraFeatures → Commands**
+
+
+# Original documentation from Shader Graph Variables
 
 - **Requires Shader Graph v10+**
 - **Tested with Unity 2020.3.0f1, Shader Graph v10.3.2** (URP, but should work in HDRP too)
