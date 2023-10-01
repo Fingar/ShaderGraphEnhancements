@@ -11,6 +11,8 @@ For these hotkeys I have added 'Shift' modifier or 'Ctrl+Shift'. Its not optimal
 For full list of the Add Node-hotkeys, check: 
 **Tools → Shader Graph Enhancements**
 
+PS: The whole Register/Get node stuff makes the editor reeeeeally slow after a while, so its not as smooth as Amplify Shader Graph.
+
 
 # Original documentation from Shader Graph Variables
 
